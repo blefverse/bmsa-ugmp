@@ -1,0 +1,50 @@
+{
+	"user": "brpsamp",
+	"repo": "brpsa-ugmp",
+	"entry": "test.pwn",
+	"output": "test.amx",
+	"contributors": ["dkluin"],
+	"dependencies": ["pawn-lang/samp-stdlib"],
+	"resources": [
+		{
+			"name": "UGMP.*\\.zip",
+			"archive": true,
+			"platform": "windows",
+			"includes": [
+				"pawno/include"
+			],
+			"plugins": [
+				"ugmpdl.dll",
+				"plugins/ugmp.dll"
+			]
+		},
+		{
+			"name": "UGMP.*\\.zip",
+			"archive": true,
+			"platform": "linux",
+			"includes": [
+				"pawno/include"
+			],
+			"plugins": [
+				"ugmpdl.so",
+				"plugins/ugmp.so"
+			]
+		}
+	],
+	"build": {
+		"name": "main",
+		"args": [
+			"-;+",
+			"-(+",
+			"-\\+",
+			"-d3",
+			"-Z+"
+		],
+		"includes": [
+			"ugmp"
+		],
+		"compiler": {
+			"version": "3.10.10"
+		}
+	}
+}
